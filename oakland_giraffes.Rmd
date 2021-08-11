@@ -1,0 +1,59 @@
+---
+title: "WIlson_Giraffes"
+author: "Allie Cole"
+date: "8/11/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# In your console type `install.packages("tidyverse")`, `install.packages("here")`, `install.packages("janitor")`, `install.packages("ggplot2")` so that you have them on your computer
+
+
+#these are the packages you need to attach to your rmarkdown
+library(tidyverse) 
+library(here)
+library(janitor)
+library(ggplot2)
+```
+
+# Wilson's Data on Giraffes 
+## This is for the Oakland Zoo 
+
+
+```{r}
+# Importing all the data 
+
+data_gir <- read_csv(here::here("data", "Guest Perceptions Data All - Cleaned.csv" ))
+
+# now we clean up the names so its easier to work with 
+
+data_gir <- janitor::clean_names(data_gir) #now everything is in lower case 
+
+# taking a look at our data 
+
+summary(data_gir)
+```
+
+
+### Getting the means of a few things 
+
+```{r}
+# creating a for loop that will go through the columns we want 
+
+p_feelings <- data.frame()
+
+mean_feelings <- vector(mode = "numeric", length = ncol(data_gir$p1:data_gir$p8)) #this is where we will store our means 
+
+for (i in 1:) {
+  mean_val <- mean()
+}
+
+
+```
+
+
+
+
+
