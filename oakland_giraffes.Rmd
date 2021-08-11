@@ -34,6 +34,8 @@ data_gir <- janitor::clean_names(data_gir) #now everything is in lower case
 # taking a look at our data 
 
 summary(data_gir)
+
+class(data_gir$p1)
 ```
 
 
@@ -42,14 +44,12 @@ summary(data_gir)
 ```{r}
 # creating a for loop that will go through the columns we want 
 
-p_feelings <- data.frame()
+p_feelings <- data_gir %>% 
+  data.frame("p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8")
 
-mean_feelings <- vector(mode = "numeric", length = ncol(data_gir$p1:data_gir$p8)) #this is where we will store our means 
-
-for (i in 1:) {
-  mean_val <- mean()
-}
-
+data_gir %>%  
+  group_by(phase) %>% 
+  summarize((across(where(is.numeric(), mean, na.rm = TRUE))))
 
 ```
 
